@@ -1,0 +1,48 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cal {
+  width: 400px;
+  height: 600px;
+  margin-left: calc(50% - 200px);
+  margin-top: calc(50vh - 300px);
+  border: black 2px solid;
+  box-shadow: 2px 2px;
+}
+
+input {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 30px;
+  height: 45px;
+  font-size: 30px;
+}
+
+button {
+  width: 120px;
+  height: 50px;
+  font-size: 22px;
+  color: black;
+  margin-left: calc(50% - 60px);
+  margin-top: 32px;
+}
+
+button:hover {
+  color: blue;
+}
+
+#cal-result {
+  width: 100%;
+  height: 230px;
+  margin-top: 55px;
+}
+
+li {
+  margin-top: 10px;
+  font-size: 20px;
+}
