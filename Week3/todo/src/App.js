@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoCreator from "./components/TodoCreator"
+import TodoRetrievor from "./components/TodoRetrievor"
 import "./style/App.css"
 
 class App extends React.Component {
@@ -13,6 +14,10 @@ class App extends React.Component {
       <div>
         <div className="todo-creator-div">
           <TodoCreator />
+          
+        </div>
+        <div className="todo-retrievor-div">
+          <TodoRetrievor />
         </div>
       </div>
     );

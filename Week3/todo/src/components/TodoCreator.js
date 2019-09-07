@@ -38,13 +38,16 @@ class TodoCreator extends Component {
     // 우리가 input에 입력한 데이터가 서버로 전송되길 원한다
     return (
       <React.Fragment>
-        <input name="name" value={this.state.name}
+        <input className="creator-input"
+          name="name" value={this.state.name}
           onChange={this.nameInputChanged} placeholder="이름을 입력하세요"/>
 
-        <input name="todo" value={this.state.todo}
+        <input className="creator-input"
+          name="todo" value={this.state.todo}
           onChange={this.todoInputChanged} placeholder="할 일을 입력하세요"/>
 
-        <button onClick={this.btnClicked}>등록</button>
+        <button className="creator-button"
+          onClick={this.btnClicked}>등록</button>
       </React.Fragment>
     );
   }

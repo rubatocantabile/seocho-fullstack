@@ -1,0 +1,17 @@
+.retrievor-input {
+  width: 240px;
+  height: 35px;
+
+  font-size: 28px;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+.retrievor-button {
+  width: 82px;
+  height: 35px;
+  font-size: 28px;
+
+  margin-left: 25px;
+  margin-top: 30px;
+}
