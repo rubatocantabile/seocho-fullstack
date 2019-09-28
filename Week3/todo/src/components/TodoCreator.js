@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./../style/TodoCreator.css"
+
 
 class TodoCreator extends Component {
 
@@ -17,8 +19,16 @@ class TodoCreator extends Component {
   }
 
   btnClicked() {
-    // 나중에 여기서 this.state에 있는 정보를 가져와 서버에 전달하도록 한다!ㅌ
-    console.log(this.state)
+    axios.post("http://localhost:9000/todo_list", {
+      name: this.state.name,
+      todo: this.state.todo
+    })
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
   }
 
   nameInputChanged(event) {
