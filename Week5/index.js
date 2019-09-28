@@ -1,14 +1,13 @@
 const express = require("express")
 const knex = require("knex")
-const cors = require("cors")
 const app = express()
 
-
+// CORS 설정 해제
+const cors = require("cors")
+app.use(cors())
 
 // HTTP req body를 파싱해준다
 app.use(express.json())
-app.use(cors())
-
 
 // DB 연결
 const db = knex({

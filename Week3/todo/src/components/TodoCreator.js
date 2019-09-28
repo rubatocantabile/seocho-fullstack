@@ -19,12 +19,12 @@ class TodoCreator extends Component {
   }
 
   btnClicked() {
-    axios.post("http://localhost:9000/todo_list", {
+    axios.post("/todo_list", {
       name: this.state.name,
       todo: this.state.todo
     })
     .then((response) => {
-      console.log(response)
+      alert("입력하신 할일이 등록되었습니다!")
     })
     .catch((error) => {
       console.error(error)

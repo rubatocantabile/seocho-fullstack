@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./../style/TodoRetrievor.css"
 
 class TodoRetrievor extends Component {
@@ -8,15 +9,7 @@ class TodoRetrievor extends Component {
 
     this.state = {
       name: "",
-      todoList: [{
-        name: "고양이",
-        todo: "야옹하기",
-        done: false
-      }, {
-        name: "강아지",
-        todo: "멍멍하기",
-        done: true
-      }]
+      todoList: []
     }
 
     // 이것도 아직 이해가 어려우시겠지만 꼭 하셔아합니다 :)
@@ -31,8 +24,15 @@ class TodoRetrievor extends Component {
     // 라고 말하고
     // 서버가 response로 보낸 응답을
     // 다시 state에 넣어서 아래서 렌더링을 자동으로 될 수 있게 한다
-
-    console.log(this.state)
+    axios.get(`/todo_list?name=${this.state.name}`)
+    .then((response) => {
+      this.setState({
+        todoList: response.data
+      })
+    })
+    .catch((error) => {
+      console.error(error)
+    })
   }
 
   removeBtnClicked(event) {
@@ -63,7 +63,8 @@ class TodoRetrievor extends Component {
         <div>
           {this.state.todoList.map((todo, i) => {
             let check = ""
-            if (todo.done) {
+            // todo.done이 숫자인지 문자열인지 확인해봐야함! typeof todo.done
+            if (todo.done === 1) {
               check = "✓"
             }
 
